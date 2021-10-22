@@ -79,8 +79,8 @@ header{
 }
 
 img{
-    max-width: 250px;
-    max-height: 280px;
+    max-width: 80%;
+    max-height: 90%;
     margin: 10px auto 10px auto;
     display: flex;
     padding: 0;
