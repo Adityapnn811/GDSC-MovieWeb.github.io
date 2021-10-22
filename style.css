@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=Baskervville&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@700&family=Roboto+Slab:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@600&display=swap');
+html{
+    font-family: 'Libre Baskerville', serif;
+    background-color: #0c0c3a;
+}
+header{
+    padding-top: 10px;
+    text-align: center;
+    font-family: 'Roboto Slab', sans-serif;
+    color: black;
+    font-size: 1.3rem;
+    position: sticky;
+    background-color: #0c0c3a;
+    top: 0;
+    padding: 0;
+    margin: 0;
+    color: white;
+}
+
+/*Style dari content*/
+#container{
+    margin: auto;
+    padding-top: 10px;
+    width: auto;
+    height: auto;
+    background-color: #0c0c3a;
+}
+
+.content{
+    background-color: rgb(185, 182, 182);
+    border: 5px solid rgb(185, 182, 182);
+    border-radius: 10px;
+    margin: 15px auto 15px auto;
+    width: 80%;
+    height: 300px;
+    display: grid;
+    grid-template-areas: 
+    "poster title rating"
+    "poster description description";
+    grid-template-columns: 15% auto 10%;
+    grid-template-rows: 100px auto;
+    box-shadow: 0 4px 8px 0 rgba(90, 87, 87, 0.445), 0 6px 10px 0 rgba(63, 63, 63, 0.294);
+    color: rgb(70, 66, 66);
+}
+
+.poster{
+    grid-area: poster;
+}
+
+.title{
+    grid-area: title;
+    font-family: 'Libre Baskerville', serif;
+    font-size: 1.8em;
+    align-items: center;
+    justify-content: left;
+    display: flex;
+}
+
+.rating{
+    grid-area: rating;
+    font-family: 'Roboto Slab', serif;
+    font-size: 1.6em;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+
+.description{
+    font-family: 'Baskervville', serif;
+    font-size: 1.3em;
+    grid-area: description;
+    border-top: 2px solid black;
+    padding-top: 10px;
+    align-items: top;
+    justify-content: center;
+    display: flex;
+}
+
+img{
+    max-width: 250px;
+    max-height: 280px;
+    margin: 10px auto 10px auto;
+    display: flex;
+    padding: 0;
+    box-shadow: 6px 6px;
+}
+
