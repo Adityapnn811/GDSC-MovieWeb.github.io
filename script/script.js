@@ -63,6 +63,10 @@ const movie = [
 function renderList(){
     for (let i in movie){
         // Membuat elemen dengan div tag, sesuai desain, kemudian menambahkan class sesuai desain juga
+        var anchor_title = document.createElement("a");
+        anchor_title.href = "./page/movie.html" + "?var1=" + i;
+        var anchor_poster = document.createElement("a");
+        anchor_poster.href = "./page/movie.html" + "?var1=" + i;
         var content = document.createElement("div");
         content.className += " content"
         var title = document.createElement("div");
@@ -74,20 +78,60 @@ function renderList(){
         var poster = document.createElement("div");
         poster.className += " poster";
         var img = document.createElement("img");
-        // Menambahkan source dan alt dari tag img
+        // append anchor_title ke dalam title dulu baru nanti anchor di isi judul
+        title.appendChild(anchor_title)
+        // Menambahkan source dan alt dan class dari tag img
+        img.className += "list-img";
         img.src = movie[i].poster;
         img.alt = movie[i].judul;
         poster.appendChild(img);
-        // Menambahkan teks sesuai classnya
-        title.innerHTML = movie[i].judul;
+        // Menambahkan teks sesuai dia elemen apa
+        anchor_title.innerHTML = movie[i].judul;
         rating.innerHTML = movie[i].rating;
         description.innerHTML = movie[i].deskripsi;
+        // append poster ke dalam anchor_poster
+        anchor_poster.appendChild(poster);
         // Append all of the created title, etc to the content
         content.appendChild(title);
         content.appendChild(rating);
         content.appendChild(description);
-        content.appendChild(poster);
+        content.appendChild(anchor_poster);
         // append the content to the container
         document.getElementById("container").appendChild(content);
     }
+}
+
+function getParams() {
+    var idx = document.URL.indexOf('?');
+    if (idx != -1) {
+        var pairs = document.URL.substring(idx+1, document.URL.length).split('&');
+            for (var i=0; i<pairs.length; i++) {
+                nameVal = pairs[i].split('=');
+            }
+        }
+    return Number(nameVal[1]);
+}
+
+function renderMoviePage(index){
+    // membuat element sesuai desain
+    var poster = document.createElement("div");
+    poster.id += "poster-container";
+    var posterimg = document.createElement("img");
+    // set id, src, dan alt dari gambar poster (posterimg)
+    posterimg.id += "movie-poster";
+    posterimg.src = "." + movie[index].poster;
+    posterimg.alt = movie[index].judul;
+    var title = document.createElement("div");
+    title.id += "movie-title";
+    var description = document.createElement("div");
+    description.id += "movie-description";
+    // Mengisi elemen dengan teks
+    title.innerHTML = movie[index].judul;
+    description.innerHTML = movie[index].deskripsi;
+    //append posterimg ke poster
+    poster.appendChild(posterimg);
+    // append content ke element container
+    document.getElementById("content-container").appendChild(poster);
+    document.getElementById("content-container").appendChild(title);
+    document.getElementById("content-container").appendChild(description);
 }

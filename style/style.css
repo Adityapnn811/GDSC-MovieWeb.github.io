@@ -18,6 +18,10 @@ header{
     margin: 0;
     color: white;
 }
+a {
+    text-decoration: none;
+    color: inherit;
+}
 
 /*Style dari content*/
 #container{
@@ -26,6 +30,11 @@ header{
     width: auto;
     height: auto;
     background-color: #0c0c3a;
+}
+
+.content:hover{
+    background-color: rgb(231, 222, 222);
+    border: 5px solid rgb(231, 222, 222);
 }
 
 .content{
@@ -78,7 +87,7 @@ header{
     display: flex;
 }
 
-img{
+.list-img{
     max-width: 80%;
     max-height: 90%;
     margin: 10px auto 10px auto;
@@ -87,3 +96,58 @@ img{
     box-shadow: 6px 6px;
 }
 
+/* Style dari movie subpage */
+#page-container{
+    margin: auto;
+}
+
+#content-container{
+    margin: auto;
+    background-color: rgb(231, 222, 222);
+    padding-top: 10px;
+    width: 94%;
+    height: 45em;
+    border-radius: 20px; 
+    display: grid;
+    grid-template-areas: 
+    "mposter mtitle"
+    "mposter mdescription";
+    grid-template-columns: auto 81em;
+    grid-template-rows: 6em auto;
+    color: rgb(70, 66, 66);
+}
+
+#back-btn{
+    font-family: 'Libre Baskervville', serif;
+    font-size: 1.5em;
+    color: rgb(221, 140, 34);
+    margin: 0 0 0.7em 3em;
+}
+
+#poster-container{
+    grid-area: mposter;
+    display: flex;
+}
+
+#movie-poster{
+    max-width: 35em;
+    max-height: 40em;
+    margin: 2em 1em 2em 2em;
+    box-shadow: 6px 6px;
+    display: flex;
+}
+
+#movie-title{
+    grid-area: mtitle;
+    display: flex;
+    font-size: 2.5em;
+    align-items: center;
+    font-family: 'Libre Baskerville', serif;
+}
+
+#movie-description{
+    grid-area: mdescription;
+    border-top: 2px solid black;
+    padding-top: 1em;
+    font-size: 1.3em;
+}
